@@ -23,6 +23,7 @@
 		5E871F5A16D50BB600DFDDFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E871F3516D50BB500DFDDFD /* Foundation.framework */; };
 		5E871F6216D50BB600DFDDFD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E871F6016D50BB600DFDDFD /* InfoPlist.strings */; };
 		5E871F6516D50BB600DFDDFD /* testProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E871F6416D50BB600DFDDFD /* testProjectTests.m */; };
+		5ED6C76716D8B7B000809B0D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED6C76616D8B7B000809B0D /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		5E871F6116D50BB600DFDDFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E871F6316D50BB600DFDDFD /* testProjectTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testProjectTests.h; sourceTree = "<group>"; };
 		5E871F6416D50BB600DFDDFD /* testProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testProjectTests.m; sourceTree = "<group>"; };
+		5ED6C76616D8B7B000809B0D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED6C76716D8B7B000809B0D /* SystemConfiguration.framework in Frameworks */,
 				5E871F3416D50BB500DFDDFD /* UIKit.framework in Frameworks */,
 				5E871F3616D50BB500DFDDFD /* Foundation.framework in Frameworks */,
 				5E871F3816D50BB500DFDDFD /* CoreGraphics.framework in Frameworks */,
@@ -106,6 +109,7 @@
 		5E871F3216D50BB500DFDDFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5ED6C76616D8B7B000809B0D /* SystemConfiguration.framework */,
 				5E871F3316D50BB500DFDDFD /* UIKit.framework */,
 				5E871F3516D50BB500DFDDFD /* Foundation.framework */,
 				5E871F3716D50BB500DFDDFD /* CoreGraphics.framework */,
@@ -117,8 +121,6 @@
 		5E871F3916D50BB500DFDDFD /* testProject */ = {
 			isa = PBXGroup;
 			children = (
-				5E871F4216D50BB500DFDDFD /* AppDelegate.h */,
-				5E871F4316D50BB500DFDDFD /* AppDelegate.m */,
 				5E871F4B16D50BB500DFDDFD /* MainStoryboard.storyboard */,
 				5E871F4E16D50BB500DFDDFD /* ViewController.h */,
 				5E871F4F16D50BB600DFDDFD /* ViewController.m */,
@@ -130,6 +132,8 @@
 		5E871F3A16D50BB500DFDDFD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E871F4216D50BB500DFDDFD /* AppDelegate.h */,
+				5E871F4316D50BB500DFDDFD /* AppDelegate.m */,
 				5E871F3B16D50BB500DFDDFD /* testProject-Info.plist */,
 				5E871F3C16D50BB500DFDDFD /* InfoPlist.strings */,
 				5E871F3F16D50BB500DFDDFD /* main.m */,
@@ -446,6 +450,7 @@
 				5E871F6A16D50BB600DFDDFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E871F6B16D50BB600DFDDFD /* Build configuration list for PBXNativeTarget "testProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +459,7 @@
 				5E871F6D16D50BB600DFDDFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
