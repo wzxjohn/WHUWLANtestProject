@@ -15,16 +15,17 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHY-sE-Ojs">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="218" id="hhz-Gq-6VT"/>
+                                    <constraint firstAttribute="height" constant="218" id="mGa-ML-j5f"/>
                                 </constraints>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0A-4s-uZe">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="I3B-9C-bIW"/>
+                                    <constraint firstAttribute="height" constant="43" id="uDB-eG-BcA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="LoadCookie">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -35,6 +36,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypk-9H-M7w">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="T5f-PZ-5Ft"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,14 +58,17 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3BD-uh-a1c">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="closeDoneEdit:" destination="2" eventType="editingDidEndOnExit" id="mlD-lm-Xkl"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmF-X0-gBl">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="146" id="Nab-5K-49w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfB-nS-ehj">
@@ -69,30 +76,59 @@
                                     <constraint firstAttribute="width" constant="138" id="9XF-7p-c4o"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WHU-Wifi One-Key Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNs-h1-fXF">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="nrZ-JP-Yuz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJg-iD-Ycs">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout" destination="2" eventType="touchUpInside" id="ZeR-3Z-DuA"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gfB-nS-ehj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="136" id="3Hb-2d-mv4"/>
+                            <constraint firstItem="gHY-sE-Ojs" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="1UA-t3-GSb"/>
                             <constraint firstItem="gfB-nS-ehj" firstAttribute="leading" secondItem="Pg8-44-Hvx" secondAttribute="leading" type="default" id="86L-Cw-4gT"/>
+                            <constraint firstItem="DmF-X0-gBl" firstAttribute="top" secondItem="mNs-h1-fXF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ANW-8l-Pfd"/>
+                            <constraint firstAttribute="trailing" secondItem="mNs-h1-fXF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Azt-bb-Rpv"/>
+                            <constraint firstItem="mNs-h1-fXF" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DRk-1u-qFx"/>
+                            <constraint firstItem="gfB-nS-ehj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="136" id="H33-pA-A7X"/>
+                            <constraint firstAttribute="trailing" secondItem="DJg-iD-Ycs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ItL-IO-PW4"/>
                             <constraint firstAttribute="trailing" secondItem="ypk-9H-M7w" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LBL-rF-eSK"/>
                             <constraint firstItem="3BD-uh-a1c" firstAttribute="leading" secondItem="gfB-nS-ehj" secondAttribute="leading" type="default" id="QqF-dQ-kiZ"/>
-                            <constraint firstItem="DmF-X0-gBl" firstAttribute="top" secondItem="3" secondAttribute="top" constant="59" id="Tno-fs-c13"/>
-                            <constraint firstItem="A0A-4s-uZe" firstAttribute="top" secondItem="3" secondAttribute="top" constant="87" id="ad6-pf-0Nn"/>
-                            <constraint firstAttribute="bottom" secondItem="gHY-sE-Ojs" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="atc-t5-ObW"/>
+                            <constraint firstItem="A0A-4s-uZe" firstAttribute="top" secondItem="mNs-h1-fXF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Tlj-eu-PIU"/>
+                            <constraint firstItem="Pg8-44-Hvx" firstAttribute="baseline" secondItem="A0A-4s-uZe" secondAttribute="baseline" type="default" id="Ty4-4J-PAg"/>
+                            <constraint firstItem="ypk-9H-M7w" firstAttribute="top" secondItem="3" secondAttribute="top" constant="113" id="TyF-Go-byz"/>
+                            <constraint firstItem="DJg-iD-Ycs" firstAttribute="top" secondItem="3" secondAttribute="top" constant="171" id="afr-wT-a2h"/>
                             <constraint firstItem="3BD-uh-a1c" firstAttribute="top" secondItem="gfB-nS-ehj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bAR-U1-GPf"/>
                             <constraint firstItem="gHY-sE-Ojs" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="c7u-29-ZYw"/>
                             <constraint firstItem="Pg8-44-Hvx" firstAttribute="top" secondItem="DmF-X0-gBl" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cI4-T4-una"/>
-                            <constraint firstItem="ypk-9H-M7w" firstAttribute="baseline" secondItem="3BD-uh-a1c" secondAttribute="baseline" type="default" id="dVD-PD-lNN"/>
                             <constraint firstItem="DmF-X0-gBl" firstAttribute="trailing" secondItem="Pg8-44-Hvx" secondAttribute="trailing" type="default" id="ebV-eD-gjL"/>
+                            <constraint firstItem="DJg-iD-Ycs" firstAttribute="leading" secondItem="ypk-9H-M7w" secondAttribute="leading" type="default" id="gei-u8-lhz"/>
                             <constraint firstAttribute="trailing" secondItem="A0A-4s-uZe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="iro-qP-L3e"/>
                             <constraint firstItem="DmF-X0-gBl" firstAttribute="leading" secondItem="Pg8-44-Hvx" secondAttribute="leading" type="default" id="j05-tf-xtV"/>
                             <constraint firstItem="DmF-X0-gBl" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="22" id="jg7-cY-ijR"/>
                             <constraint firstItem="3BD-uh-a1c" firstAttribute="trailing" secondItem="Pg8-44-Hvx" secondAttribute="trailing" type="default" id="lFs-GU-C9m"/>
                             <constraint firstItem="gHY-sE-Ojs" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="mz1-sr-SV2"/>
+                            <constraint firstItem="mNs-h1-fXF" firstAttribute="top" secondItem="3" secondAttribute="top" constant="12" id="pz4-RN-Bq3"/>
                             <constraint firstItem="ypk-9H-M7w" firstAttribute="leading" secondItem="A0A-4s-uZe" secondAttribute="leading" type="default" id="qeN-p8-1vZ"/>
+                            <constraint firstItem="ypk-9H-M7w" firstAttribute="baseline" secondItem="gfB-nS-ehj" secondAttribute="baseline" type="default" id="vUV-tv-BNm"/>
                         </constraints>
                         <connections>
                             <action selector="dismissKeyboard:" destination="2" eventType="touchDown" id="kPH-bg-YCm"/>
@@ -116,6 +152,7 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="closeDoneEdit:"/>
                 <relationship kind="action" name="dismissKeyboard:"/>
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>

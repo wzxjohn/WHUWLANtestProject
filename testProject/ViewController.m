@@ -16,6 +16,7 @@
 @property (nonatomic,strong)NSMutableData *responseData;
 @property (nonatomic,strong)NSURLConnection *getCookieConnection;
 @property (nonatomic,strong)NSURLConnection *loginConnection;
+@property (nonatomic,strong)NSURLConnection *logoutConnection;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic,strong)NSHTTPURLResponse *response;
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
@@ -27,7 +28,21 @@
 
 - (IBAction)login {
     NSString *username = self.usernameField.text;
+    if (username.length == 0)
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"错误" message:@"用户名不能为空！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alertView show];
+        return;
+    }
+    
     NSString *password = self.passwordField.text;
+    if (password.length == 0)
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"错误" message:@"密码不能为空！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alertView show];
+        return;
+    }
+    
     NSURL *myURL = [NSURL URLWithString:@"https://wlan.whu.edu.cn/portal/login"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL
                                                     cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -46,6 +61,15 @@
                                                     cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                 timeoutInterval:60];
     self.getCookieConnection= [[NSURLConnection alloc] initWithRequest:request delegate:self];
+}
+
+- (IBAction)logout {
+    NSURL *myURL = [NSURL URLWithString:@"https://wlan.whu.edu.cn/portal/logOff"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myURL
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:60];
+    request.HTTPMethod = @"GET";
+    self.logoutConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 
@@ -155,6 +179,19 @@
 {
     [self.usernameField resignFirstResponder];
     [self.passwordField resignFirstResponder];
+}
+
+- (IBAction)closeDoneEdit:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if ([alertView tag] == 10000) {    // it's the Error alert
+        if (buttonIndex == 0) {     // and they clicked OK.
+            
+        }
+    }
 }
 
 - (void)viewDidLoad
