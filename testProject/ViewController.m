@@ -21,6 +21,7 @@
 @property (nonatomic,strong)NSHTTPURLResponse *response;
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UISwitch *saveSwitch;
 
 @end
 
@@ -41,6 +42,21 @@
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"错误" message:@"密码不能为空！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alertView show];
         return;
+    }
+    
+    if ([self.saveSwitch isOn])
+    {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:username forKey:@"myUsername"];
+        [userDefaults setObject:password forKey:@"myPassword"];
+        [userDefaults synchronize];
+    }
+    else
+    {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:@"" forKey:@"myUsername"];
+        [userDefaults setObject:@"" forKey:@"myPassword"];
+        [userDefaults synchronize];
     }
     
     NSURL *myURL = [NSURL URLWithString:@"https://wlan.whu.edu.cn/portal/login"];
@@ -198,6 +214,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+        
+    NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
+    NSString *myUsername = [userDefaultes stringForKey:@"myUsername"];
+    self.usernameField.text = myUsername;
+    NSString *myPassword = [userDefaultes stringForKey:@"myPassword"];
+    self.passwordField.text = myPassword;
 }
 
 - (void)didReceiveMemoryWarning
@@ -208,4 +230,8 @@
 
 
 
+- (void)viewDidUnload {
+    [self setSaveSwitch:nil];
+    [super viewDidUnload];
+}
 @end
