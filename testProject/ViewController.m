@@ -151,6 +151,12 @@
     NSLog(@"%@",currentSSID);
 }
 
+- (IBAction)dismissKeyboard:(id)sender;
+{
+    [self.usernameField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
